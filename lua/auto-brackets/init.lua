@@ -1,12 +1,20 @@
 
 local M = {}
 
+vim.keymap.set("i", "(", function () M.print_text("()") end)
+vim.keymap.set("i", "{", function () M.print_text("{}") end)
+vim.keymap.set("i", "[", function () M.print_text("[)") end)
+vim.keymap.set("i", '"', function () M.print_text('""') end)
 
 function M.brackets()
 
 	M.print_text('{}')
 
 end
+
+
+
+
 
 function M.print_text(text)
 
