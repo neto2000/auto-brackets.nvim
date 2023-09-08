@@ -6,10 +6,10 @@
 " Prevents the plugin from being loaded multiple times. If the loaded
 " variable exists, do nothing more. Otherwise, assign the loaded
 " variable and continue running this instance of the plugin.
-if exists("g:loaded_auto-brackets")
+if exists("g:loaded_auto_brackets")
     finish
 endif
-let g:loaded_auto-brackets = 1
+let g:loaded_auto_brackets = 1
 
 " Defines a package path for Lua. This facilitates importing the
 " Lua modules from the plugin's dependency directory.
