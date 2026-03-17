@@ -21,7 +21,17 @@ function M.print_text(text)
 	local pos = vim.api.nvim_win_get_cursor(0)[2]
 	local row = vim.api.nvim_win_get_cursor(0)[1]
 	local line = vim.api.nvim_get_current_line()
-	local nline = line:sub(0, pos) .. text .. line:sub(pos + 1)
+	
+	local nline = line
+
+	if line:sub(pos + 1, pos + 1) == ' ' then
+
+		nline = line:sub(0, pos) .. text:sub(0,0) .. line:sub(pos + 1)
+	else
+
+		nline = line:sub(0, pos) .. text .. line:sub(pos + 1)
+	end
+
 	vim.api.nvim_set_current_line(nline)
 
 	vim.api.nvim_win_set_cursor(0, {row, pos + 1})
