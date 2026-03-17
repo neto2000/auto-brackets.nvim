@@ -24,12 +24,12 @@ function M.print_text(text)
 	
 	local nline = line
 
-	if line:sub(pos + 1, pos + 1) ~= ' ' then
-
-		nline = line:sub(0, pos) .. text:sub(0,0) .. line:sub(pos + 1)
-	else
+	if line:sub(pos + 1, pos + 1) == ' ' or pos + 1 >= line:len() then
 
 		nline = line:sub(0, pos) .. text .. line:sub(pos + 1)
+	else
+
+		nline = line:sub(0, pos) .. text:sub(1,1) .. line:sub(pos + 1)
 	end
 
 	vim.api.nvim_set_current_line(nline)
