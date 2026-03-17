@@ -10,7 +10,6 @@ end
 
 
 
-
 function M.print_text(text)
 
 	-- local row, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -24,7 +23,7 @@ function M.print_text(text)
 	
 	local nline = line
 
-	if line:sub(pos + 1, pos + 1) == ' ' or pos + 1 >= line:len() then
+	if line:sub(pos + 1, pos + 1) == ' ' or pos + 1 > line:len() then
 
 		nline = line:sub(0, pos) .. text .. line:sub(pos + 1)
 	else
