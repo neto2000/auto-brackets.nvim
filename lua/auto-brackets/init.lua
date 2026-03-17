@@ -26,7 +26,7 @@ function M.print_text(text)
 
 	if line:sub(pos + 1, pos + 1) == ' ' then
 
-		nline = line:sub(0, pos) .. text:sub(0,0) .. line:sub(pos + 1)
+		nline = line:sub(0, pos) .. "hi" .. line:sub(pos + 1)
 	else
 
 		nline = line:sub(0, pos) .. text .. line:sub(pos + 1)
