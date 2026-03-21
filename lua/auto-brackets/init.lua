@@ -23,7 +23,7 @@ function M.print_text(text)
 	
 	local nline = line
 
-	if line:sub(pos + 1, pos + 1) == ' ' or pos + 1 > line:len() then
+	if line:sub(pos + 1, pos + 1) == ' ' or pos + 1 > line:len() or line:sub(pos + 1, pos + 1):match("%a") == false then
 
 		nline = line:sub(0, pos) .. text .. line:sub(pos + 1)
 	else
